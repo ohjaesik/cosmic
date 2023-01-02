@@ -16,7 +16,10 @@ function tagPrint() {
       + "월 " +data[i].birth.substr(4,2)+ "일 " +"입니다"
       }
       else if(print > 6){
-        p.innerText = "유효하지 않은 숫자입니다.)
+        p.innerText = "유효하지 않은 숫자입니다"
+      }
+      else if(print == ""){
+        p.innerText = "숫자를 입력해주세요"
       }
     }})
   
