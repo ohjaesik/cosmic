@@ -1,0 +1,29 @@
+
+h3{
+  margin : 0;
+  border-radius: 5px;
+  box-shadow : 0px 1px 0px 0px;
+
+}
+div{
+  border-radius: 5px;
+  box-shadow : 1px 1px 1px 1px;
+}
+.del{
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color:white;
+  padding: 8px;
+  background-color: skyblue;
+  border: 0.1px skyblue;
+  border-radius: 5px;
+}
+.memo{
+  margin-left: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+#list{
+  box-shadow: 0px 0px 0px 0px;
+}
