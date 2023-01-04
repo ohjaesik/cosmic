@@ -49,7 +49,7 @@ function Create(props) {
   </article>
 }
 function Update(props) {
-  const [title, setTitle] = useState(props.title);
+  const [title, setTitle] = useState(props.title); // => props 값 변경시 state 사용
   const [body, setBody] = useState(props.body);
   return <article>
   <h2>Update</h2>
@@ -97,13 +97,24 @@ function App() {
       }
     }
     content = <Article title={title} body={body}></Article>
-    contextControl = <li><a href={"/updata/"+ id} onClick={event => {
+    contextControl = <><li><a href={"/update/"+ id} onClick={event => {
       event.preventDefault();
       setMode("UPDATE");
     }}>Update</a> </li>
+    <li><input type="button" value="Delete" onClick={() => {
+      const newTopics = []
+      for(let i=0; i<topics.length; i++){
+        if(topics[i].id !== id){
+          newTopics.push(topics[i]);
+        }
+        setTopics(newTopics);
+        setMode('WELCOME');
+      }
+    }}></input></li>
+    </>
   }else if(mode === "CREATE"){
     content = <Create onCreate={(title, body) => {
-      const newTopic = {id:nextId, title:title, body:body}
+      const newTopic = {id:nextId, title:title, body:body} // 배열의 내용바꿀때는 새로운 배열 객체 만들어서 사용
       const newTopics = [...topics]
       newTopics.push(newTopic)
       setTopics(newTopics)
